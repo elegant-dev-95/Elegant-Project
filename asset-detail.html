@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EG-IT-0142 – Elegant Group IT Asset Control</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="assetDetail" data-nav="assets">
+<div class="app">
+  <aside class="sidebar" id="sidebar"></aside>
+
+  <main class="main">
+    <header class="page-header">
+      <div>
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Dashboard</a> / <a href="assets.html">Assets</a> / EG-IT-0142</nav>
+        <div class="title-row">
+          <h1>Cisco Catalyst 9300 core switch</h1>
+          <span class="pill pill-med">Under repair</span>
+        </div>
+        <p class="subtitle">EG-IT-0142, Network device, Head office, AJ Heights server room</p>
+      </div>
+      <div class="actions">
+        <button type="button" class="btn">Transfer</button>
+        <button type="button" class="btn">Start disposal</button>
+        <button type="button" class="btn">Edit asset</button>
+        <button type="button" class="btn btn-primary">Raise service ticket</button>
+      </div>
+    </header>
+
+    <div class="banner" role="status">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+      <p><strong>Replacement recommended.</strong> Repairs total ৳86,000, which is 62% of the ৳1,39,000 replacement quote. The rule flags assets above 50%.</p>
+      <a href="#">Start a purchase request</a>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Asset sections">
+      <button type="button" class="tab" role="tab" id="tab-overview" aria-controls="panel-overview">Overview</button>
+      <button type="button" class="tab" role="tab" id="tab-assign" aria-controls="panel-assign">Assignment history</button>
+      <button type="button" class="tab" role="tab" id="tab-service" aria-controls="panel-service">Service history (4)</button>
+      <button type="button" class="tab" role="tab" id="tab-docs" aria-controls="panel-docs">Documents (3)</button>
+      <button type="button" class="tab" role="tab" id="tab-log" aria-controls="panel-log">Activity log</button>
+    </div>
+
+    <div role="tabpanel" id="panel-overview" aria-labelledby="tab-overview">
+      <div class="detail-layout">
+        <div class="detail-main" id="fieldGroups"></div>
+        <div class="detail-side">
+          <section class="card">
+            <h2 class="small">Book value</h2>
+            <div class="big-value"><strong>৳1,85,000</strong><span class="muted" style="font-size:13px">of ৳5,15,000 cost</span></div>
+            <div class="chart" id="deprChart"></div>
+            <p class="muted" style="margin:6px 0 0;font-size:13px">Straight-line over 10 years, set for network devices in Settings.</p>
+          </section>
+          <section class="card">
+            <h2 class="small">Asset tag</h2>
+            <div class="tag-box">
+              <svg width="84" height="84" viewBox="0 0 21 21" role="img" aria-label="QR code placeholder for EG-IT-0142" shape-rendering="crispEdges"><rect width="21" height="21" fill="#FFFFFF"/><path fill="#172033" d="M0 0h7v7H0zM1 1v5h5V1zM2 2h3v3H2zM14 0h7v7h-7zM15 1v5h5V1zM16 2h3v3h-3zM0 14h7v7H0zM1 15v5h5v-5zM2 16h3v3H2zM8 0h2v2H8zM11 1h2v3h-2zM9 3h1v3H9zM8 8h3v2H8zM12 8h2v1h-2zM15 8h3v2h-3zM19 9h2v2h-2zM0 8h2v2H0zM3 9h3v1H3zM9 11h2v3H9zM12 11h3v2h-3zM16 12h2v3h-2zM19 13h2v1h-2zM8 15h2v2H8zM11 15h3v1h-3zM12 17h2v4h-2zM15 16h1v3h-1zM17 17h4v1h-4zM18 19h3v2h-3zM9 18h2v3H9zM1 11h2v2H1zM4 12h2v1H4z"/></svg>
+              <div class="meta">
+                <strong>EG-IT-0142</strong>
+                <span class="muted">Last scanned 5 Oct 2026 by Rafiq Islam</span>
+                <button type="button" class="btn btn-sm" style="align-self:flex-start">Print label</button>
+              </div>
+            </div>
+          </section>
+          <section class="card">
+            <h2 class="small">Linked records</h2>
+            <ul class="kv-list">
+              <li><span>Parent of</span><b>24 access switches</b></li>
+              <li><span>AMC contract</span><b>Expired 30 Jun 2025</b></li>
+              <li><span>Powered by</span><a href="assets.html" style="font-weight:500">EG-IT-1190 UPS</a></li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <div role="tabpanel" id="panel-assign" aria-labelledby="tab-assign" hidden>
+      <section class="card" style="padding-top:8px;padding-bottom:8px">
+        <ol class="list timeline" id="assignList" style="margin:0"></ol>
+      </section>
+    </div>
+
+    <div role="tabpanel" id="panel-service" aria-labelledby="tab-service" hidden>
+      <section class="card table-card">
+        <div class="table-wrap">
+          <table class="data" style="min-width: 820px">
+            <thead>
+              <tr>
+                <th scope="col">Ticket</th><th scope="col">Reported</th><th scope="col">Issue and root cause</th>
+                <th scope="col">Vendor</th><th scope="col">Downtime</th><th scope="col">Status</th><th scope="col" class="right">Cost</th>
+              </tr>
+            </thead>
+            <tbody id="ticketRows"></tbody>
+            <tfoot><tr><td colspan="6">Total repair cost</td><td class="right num" id="ticketTotal"></td></tr></tfoot>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <div role="tabpanel" id="panel-docs" aria-labelledby="tab-docs" hidden>
+      <section class="card" style="padding-top:8px;padding-bottom:8px">
+        <ul class="list" id="docList" style="margin:0"></ul>
+      </section>
+    </div>
+
+    <div role="tabpanel" id="panel-log" aria-labelledby="tab-log" hidden>
+      <section class="card" style="padding-top:8px;padding-bottom:8px">
+        <ul class="list timeline" id="logList" style="margin:0"></ul>
+      </section>
+    </div>
+  </main>
+</div>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

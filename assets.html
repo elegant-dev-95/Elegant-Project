@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Asset register – Elegant Group IT Asset Control</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="assets" data-nav="assets">
+<div class="app">
+  <aside class="sidebar" id="sidebar"></aside>
+
+  <main class="main">
+    <header class="page-header">
+      <div>
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Dashboard</a> / Assets</nav>
+        <h1>Asset register</h1>
+        <p class="subtitle">1,284 assets across all sister concerns</p>
+      </div>
+      <div class="actions">
+        <button type="button" class="btn">Print QR labels</button>
+        <button type="button" class="btn">Import from Excel</button>
+        <button type="button" class="btn">Export</button>
+        <a class="btn btn-primary" href="asset-detail.html">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          Add asset
+        </a>
+      </div>
+    </header>
+
+    <section class="card filters" aria-label="Filters">
+      <div class="filter-grid">
+        <label class="field wide">Search
+          <input type="search" id="fSearch" placeholder="Asset tag, serial number, model or employee">
+        </label>
+        <label class="field">Company
+          <select id="fCompany"><option value="">All sister concerns</option></select>
+        </label>
+        <label class="field">Category
+          <select id="fCategory"><option value="">All categories</option></select>
+        </label>
+        <label class="field">Site
+          <select id="fSite"><option value="">All sites</option></select>
+        </label>
+      </div>
+      <div class="chips" id="chips" role="group" aria-label="Quick filters"></div>
+    </section>
+
+    <section class="card table-card">
+      <div class="table-wrap">
+        <table class="data" style="min-width: 1060px">
+          <thead>
+            <tr>
+              <th scope="col" style="width: 20px"><input type="checkbox" id="selectAll" aria-label="Select all"></th>
+              <th scope="col">Asset tag</th>
+              <th scope="col">Asset</th>
+              <th scope="col">Company</th>
+              <th scope="col">Assigned to</th>
+              <th scope="col">Site</th>
+              <th scope="col">Status</th>
+              <th scope="col">Warranty</th>
+              <th scope="col" class="right">Book value</th>
+            </tr>
+          </thead>
+          <tbody id="assetRows"></tbody>
+        </table>
+      </div>
+      <p class="empty" id="emptyState" hidden>No assets match these filters. Clear a filter to see more.</p>
+      <div class="table-foot">
+        <span id="resultCount" aria-live="polite"></span>
+        <div class="pager">
+          <button type="button" aria-label="Previous page">‹</button>
+          <button type="button" aria-current="page">1</button>
+          <button type="button">2</button>
+          <button type="button">3</button>
+          <button type="button" aria-label="Next page">›</button>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

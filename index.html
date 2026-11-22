@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard – Elegant Group IT Asset Control</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="dashboard" data-nav="dashboard">
+<div class="app">
+  <aside class="sidebar" id="sidebar"></aside>
+
+  <main class="main">
+    <header class="page-header">
+      <div>
+        <h1>Dashboard</h1>
+        <p class="subtitle">November 2026, all sister concerns. Figures shown are sample data.</p>
+      </div>
+      <div class="actions">
+        <label class="field">Company
+          <select><option>All sister concerns</option><option>Head office</option><option>Garments</option><option>Hotels</option><option>Real estate</option><option>Retail chain</option></select>
+        </label>
+        <label class="field">Period
+          <select><option>This month</option><option>This quarter</option><option>Fiscal year 2026–27</option></select>
+        </label>
+        <a class="btn btn-primary" href="asset-detail.html">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          Add asset
+        </a>
+      </div>
+    </header>
+
+    <section class="kpi-grid" id="kpis" aria-label="Key figures"></section>
+
+    <div class="row">
+      <section class="card wide">
+        <div class="card-head"><h2>Monthly IT spend vs budget</h2><span class="card-meta">৳ lakh, last 12 months</span></div>
+        <div class="chart" id="spendChart"></div>
+        <p class="insight">Over budget in 3 of the last 4 months (red points). Software licenses and repairs are the main drivers.</p>
+      </section>
+      <section class="card">
+        <div class="card-head"><h2>Spend by sister concern</h2><span class="card-meta">This month</span></div>
+        <div class="hbars" id="concernBars"></div>
+        <p class="insight">Garments and head office make up 52% of spend. Company names are placeholders.</p>
+      </section>
+    </div>
+
+    <div class="row">
+      <section class="card" style="flex: 1.3 1 380px">
+        <h2>Assets by category</h2>
+        <div id="categoryDonut"></div>
+      </section>
+      <section class="card flex-col">
+        <h2>Lifecycle status</h2>
+        <div class="stack" id="lifecycleBar"></div>
+        <div class="legend-grid" id="lifecycleLegend"></div>
+        <p class="insight">61 spare devices in stock. Check them before approving new purchases.</p>
+      </section>
+      <section class="card narrow">
+        <h2>Verification compliance</h2>
+        <div class="gauge"><div id="verificationGauge"></div><p id="verificationNote"></p></div>
+      </section>
+    </div>
+
+    <div class="row">
+      <section class="card wide" style="flex-basis: 480px">
+        <div class="card-head"><h2>Needs attention</h2><span class="card-meta" id="alertCount"></span></div>
+        <ul class="list" id="alerts"></ul>
+      </section>
+      <section class="card">
+        <div class="card-head"><h2>Upcoming renewals</h2><a href="subscriptions.html" style="font-size:13.5px;font-weight:500">View all</a></div>
+        <ul class="list" id="renewals"></ul>
+      </section>
+    </div>
+  </main>
+</div>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

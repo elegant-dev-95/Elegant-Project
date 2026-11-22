@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Subscriptions – Elegant Group IT Asset Control</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="subscriptions" data-nav="subscriptions">
+<div class="app">
+  <aside class="sidebar" id="sidebar"></aside>
+
+  <main class="main">
+    <header class="page-header">
+      <div>
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Dashboard</a> / Subscriptions</nav>
+        <h1>Subscriptions &amp; renewals</h1>
+        <p class="subtitle">Software, domains, hosting, SSL and cloud services. Passwords and license keys are never stored here.</p>
+      </div>
+      <div class="actions">
+        <button type="button" class="btn">Export</button>
+        <button type="button" class="btn btn-primary">Add subscription</button>
+      </div>
+    </header>
+
+    <section class="kpi-grid" aria-label="Summary">
+      <div class="kpi"><span class="kpi-label">Annual recurring cost</span><span class="kpi-value">৳38.4 L</span><span class="kpi-note">46 active subscriptions</span></div>
+      <div class="kpi"><span class="kpi-label">Renewing in 30 days</span><span class="kpi-value">7</span><span class="kpi-note warn">৳2.9 L falling due</span></div>
+      <div class="kpi"><span class="kpi-label">Unused seats</span><span class="kpi-value">42</span><span class="kpi-note bad">About ৳1.1 L a month</span></div>
+      <div class="kpi"><span class="kpi-label">Billed in USD</span><span class="kpi-value">31%</span><span class="kpi-note">Exposed to exchange-rate changes</span></div>
+    </section>
+
+    <section class="card">
+      <div class="card-head"><h2>Next 90 days</h2><span class="card-meta">Cancellation deadlines come before renewal dates</span></div>
+      <div class="window-grid" id="windows"></div>
+    </section>
+
+    <section class="card table-card">
+      <div class="table-toolbar">
+        <h2>All subscriptions</h2>
+        <div class="chips" id="subChips" role="group" aria-label="Filter subscriptions"></div>
+      </div>
+      <div class="table-wrap">
+        <table class="data" style="min-width: 1000px">
+          <thead>
+            <tr>
+              <th scope="col">Service</th><th scope="col">Company</th><th scope="col">Seats used</th><th scope="col">Billing</th>
+              <th scope="col" class="right">Annual cost</th><th scope="col">Renews</th><th scope="col">Auto-renew</th>
+            </tr>
+          </thead>
+          <tbody id="subRows"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</div>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
